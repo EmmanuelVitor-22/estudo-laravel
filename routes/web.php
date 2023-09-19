@@ -17,28 +17,16 @@ use Illuminate\Support\Facades\Route;
 //    return view('welcome');
 //});
 
-// Criar rota nomeada
-Route::get('/users', function () {
+//essa é uma rota de visualização
+Route::get('/', function () {
     return view('welcome');
-})->name('usuario');
-
-// redirecionamento de rotas
-Route::get('users2', function (){
-    return 'Hello World';
-})->name('segunda');
-//forma simples
-//Route::get('users2', function (){
-//    //LOGICA
-//    return 'Hello World1';
-//})->name('segunda');
-//Route::redirect('users', 'users2', 301);
-//Route::permanentRedirect('users', 'users2');
-
-//forma com logica 
-Route::get('users1', function (){
-    //apnas redirecionando usando a rota em si
-    //return redirect( 'users2');
-
-//    REDIRECIONANDO CHAMANDO O NOMEADO
-    return redirect()->route("segunda");
+    // Criar rota nomeada
 });
+
+//roteamento com parametro
+Route::get('/users/{id?}', function ($id=null) {
+
+    return  'User '.$id;
+    // Criar rota nomeada
+    //    validando parametros
+})->name('usuario');
