@@ -17,21 +17,17 @@ use Illuminate\Support\Facades\Route;
 //    return view('welcome');
 //});
 
-//essa é uma rota de visualização
+//middleware isolado para cada rota
 Route::get('/', function () {
     return view('welcome');
-    // Criar rota nomeada
-});
 
-//criando agrupamento de rotas usando prefixo
-//roteamento com parametro
-Route::prefix('users')->group(function (){
+})->middleware('signed');
+
+//middleware dentro de um grupo
+Route::middleware('signed')->group(function (){
 
     Route::get('{id?}', function ($id=null) {
-
         return  'User '.$id;
-        // Criar rota nomeada
-        //    validando parametros
     })->name('usuario')->whereNumber('id');
 
 });
