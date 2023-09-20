@@ -23,10 +23,15 @@ Route::get('/', function () {
     // Criar rota nomeada
 });
 
+//criando agrupamento de rotas usando prefixo
 //roteamento com parametro
-Route::get('/users/{id?}', function ($id=null) {
+Route::prefix('users')->group(function (){
 
-    return  'User '.$id;
-    // Criar rota nomeada
-    //    validando parametros
-})->name('usuario');
+    Route::get('/users/{id?}', function ($id=null) {
+
+        return  'User '.$id;
+        // Criar rota nomeada
+        //    validando parametros
+    })->name('usuario')->whereNumber('id');
+
+});
