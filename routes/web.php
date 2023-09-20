@@ -13,9 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::domain('{user}.emma.com.br')->group(function (){
-    Route::get('{id}', function ($user,$id){
-        return $user . ' - ' . $id;
-    })->whereNumber('id');
+
+//fallback é como se fosse uma rota de fuga, caso alguma rota dê problema ou não seja encontrada
+//ao inves de apresentar erro, ele vai apresentar o que estiver listado na falback
+Route::fallback(function () {
+    return view('welcome');
+
 });
 
+//middleware dentro de um grupo
+Route::middleware('signed')->group(function (){
+
+    Route::get('{id?}', function ($id=null) {
+        return  'User '.$id;
+    })->name('usuario')->whereNumber('id');
+
+});
