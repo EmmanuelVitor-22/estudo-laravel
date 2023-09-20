@@ -12,22 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// para criar uma rota que responda a vários verbos HTTP.
-//Route::match(['get', 'post'],'users', function () {
-//    return view('welcome');
-//});
 
-//middleware isolado para cada rota
-Route::get('/', function () {
-    return view('welcome');
-
-})->middleware('signed');
-
-//middleware dentro de um grupo
-Route::middleware('signed')->group(function (){
-
-    Route::get('{id?}', function ($id=null) {
-        return  'User '.$id;
-    })->name('usuario')->whereNumber('id');
-
+Route::domain('{user}.emma.com.br')->group(function (){
+    Route::get('{id}', function ($user,$id){
+        return $user . ' - ' . $id;
+    })->whereNumber('id');
 });
+
