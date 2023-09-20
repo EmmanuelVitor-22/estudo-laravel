@@ -14,18 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-//fallback é como se fosse uma rota de fuga, caso alguma rota dê problema ou não seja encontrada
-//ao inves de apresentar erro, ele vai apresentar o que estiver listado na falback
-Route::fallback(function () {
-    return view('welcome');
+//Injeção de dependencia (injetando dependencia da classe request_
+Route::get('/', function (\Illuminate\Http\Request $request) {
+    dd($request);
+    return $request;
+//    return view('welcome');
 
 });
 
-//middleware dentro de um grupo
-Route::middleware('signed')->group(function (){
-
-    Route::get('{id?}', function ($id=null) {
-        return  'User '.$id;
-    })->name('usuario')->whereNumber('id');
-
-});
