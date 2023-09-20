@@ -27,7 +27,7 @@ Route::get('/', function () {
 //roteamento com parametro
 Route::prefix('users')->group(function (){
 
-    Route::get('/users/{id?}', function ($id=null) {
+    Route::get('{id?}', function ($id=null) {
 
         return  'User '.$id;
         // Criar rota nomeada
