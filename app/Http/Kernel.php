@@ -18,7 +18,7 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         //adicionando middlware de forma global
-        UserAgent::class,
+//        UserAgent::class,
         // \App\Http\Middleware\TrustHosts::class,
         \App\Http\Middleware\TrustProxies::class,
         \Fruitcake\Cors\HandleCors::class,

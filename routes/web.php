@@ -19,20 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 
 });
-//agrupando rotas por middleware, para q sejam aplicados globalmente apenas a essas rotas
-// utilizando multiplos  middlewares
-Route::middleware(['myApp'])->group(function () {
-    Route::get('user', function () {
-        dd("user");
-    });
-    Route::get('send', function () {
-        dd("send");
-    });
-    Route::get('service', function () {
-        dd("service");
-    })->withoutMiddleware('userAgent');
-});
+
 
 Route::get('teste', function () {
     dd("teste");
-})->middleware(['checkToken','userAgent']);
+})->middleware(['checkToken:admin']);
