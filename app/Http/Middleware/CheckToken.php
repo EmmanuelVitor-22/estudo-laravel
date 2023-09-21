@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class UserAgent
+class CheckToken
 {
     /**
      * Handle an incoming request.
@@ -16,7 +16,10 @@ class UserAgent
      */
     public function handle(Request $request, Closure $next)
     {
-       dd( $request->server('HTTP_USER_AGENT'));
+
+        if ($request->input('token') !== '123'){
+            return redirect('/');
+        }
         return $next($request);
     }
 }

@@ -19,8 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 
 });
-//agrupando rotas por middware, para q sejam aplicados globalmente apenas a essas rotas
-Route::middleware('userAgent')->group(function () {
+//agrupando rotas por middleware, para q sejam aplicados globalmente apenas a essas rotas
+// utilizando multiplos  middlewares
+Route::middleware(['checkToken','userAgent'])->group(function () {
     Route::get('user', function () {
         dd("user");
     });
@@ -30,6 +31,8 @@ Route::middleware('userAgent')->group(function () {
     Route::get('service', function () {
         dd("service");
     })->withoutMiddleware('userAgent');
-
 });
 
+Route::get('teste', function () {
+    dd("teste");
+})->middleware(['checkToken','userAgent']);
