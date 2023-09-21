@@ -50,8 +50,8 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
         'myApp' => [
+            UserAgent::class,
             CheckToken::class,
-            UserAgent::class
         ]
     ];
 
@@ -76,5 +76,10 @@ class Kernel extends HttpKernel
         'checkToken' => CheckToken::class,
         'userAgent' => UserAgent::class
 
+    ];
+
+    public $middlewarePriority = [
+        CheckToken::class,
+        UserAgent::class
     ];
 }
