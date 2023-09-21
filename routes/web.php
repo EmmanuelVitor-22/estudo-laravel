@@ -15,10 +15,15 @@ use Illuminate\Support\Facades\Route;
 
 
 //Injeção de dependencia (injetando dependencia da classe request_
+//Route::get('/', function (\Illuminate\Http\Request $request) {
+//    dd($request);
+//    return $request;
+////    return view('welcome');
+//
+//});
 Route::get('/', function (\Illuminate\Http\Request $request) {
-    dd($request);
     return $request;
 //    return view('welcome');
 
-});
+})->middleware('userAgent');
 
