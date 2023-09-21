@@ -15,11 +15,21 @@ use Illuminate\Support\Facades\Route;
 
 
 //Injeção de dependencia (injetando dependencia da classe request_
-Route::get('/', function (\Illuminate\Http\Request $request) {
+Route::get('/', function () {
     return view('welcome');
 
 });
-Route::get('user', function () {
-dd("Fui");
+//agrupando rotas por middware, para q sejam aplicados globalmente apenas a essas rotas
+Route::middleware('userAgent')->group(function () {
+    Route::get('user', function () {
+        dd("user");
+    });
+    Route::get('send', function () {
+        dd("send");
+    });
+    Route::get('service', function () {
+        dd("service");
+    });
+
 });
 
