@@ -20,6 +20,6 @@ Route::get('/', function (\Illuminate\Http\Request $request) {
 
 });
 Route::get('user', function () {
-dd("Passsei");
-})->middleware('userAgent');
+dd("Fui");
+});
 
