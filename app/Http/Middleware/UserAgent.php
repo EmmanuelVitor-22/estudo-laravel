@@ -16,7 +16,11 @@ class UserAgent
      */
     public function handle(Request $request, Closure $next)
     {
-       dd( $request->server('HTTP_USER_AGENT'));
+        //usando validação no middleware
+        if ($request->input('token') !== 'abc'){
+            return redirect('/');
+        }
+
         return $next($request);
     }
 }
