@@ -29,7 +29,7 @@ Route::middleware('userAgent')->group(function () {
     });
     Route::get('service', function () {
         dd("service");
-    });
+    })->withoutMiddleware('userAgent');
 
 });
 
