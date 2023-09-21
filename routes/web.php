@@ -21,7 +21,7 @@ Route::get('/', function () {
 });
 //agrupando rotas por middleware, para q sejam aplicados globalmente apenas a essas rotas
 // utilizando multiplos  middlewares
-Route::middleware(['checkToken','userAgent'])->group(function () {
+Route::middleware(['myApp'])->group(function () {
     Route::get('user', function () {
         dd("user");
     });
