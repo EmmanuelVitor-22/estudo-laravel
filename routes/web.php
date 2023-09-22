@@ -21,6 +21,4 @@ Route::get('/', function () {
 });
 
 
-Route::get('teste', function () {
-    dd("teste");
-})->middleware(['checkToken:admin']);
+Route::get('teste', [\App\Http\Controllers\UserController::class, 'index']);
