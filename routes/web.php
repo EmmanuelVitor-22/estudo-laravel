@@ -21,4 +21,4 @@ Route::get('/', function () {
 });
 
 
-Route::get('teste/{id}', [\App\Http\Controllers\UserController::class, 'findAll']);
+Route::get('users/{user}', [\App\Http\Controllers\UserController::class, 'show']);
