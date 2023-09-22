@@ -11,4 +11,11 @@ class UserController extends Controller
         dd("Index controller");
 
     }
+
+//    injetando referencia
+    public function findAll(Request $request, $id)
+    {
+        dd($request->query(),$id);
+
+    }
 }

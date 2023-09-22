@@ -21,4 +21,4 @@ Route::get('/', function () {
 });
 
 
-Route::get('teste', [\App\Http\Controllers\UserController::class, 'index']);
+Route::get('teste/{id}', [\App\Http\Controllers\UserController::class, 'findAll']);
