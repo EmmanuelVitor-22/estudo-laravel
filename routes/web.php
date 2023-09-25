@@ -21,5 +21,8 @@ Route::get('/', function () {
 });
 
 
-Route::resource('users', \App\Http\Controllers\UserController::class)->except(['index', 'destroy']);
+Route::resources([
+    'users'=> \App\Http\Controllers\UserController::class,
+    'post'=> \App\Http\Controllers\PostController::class,
+]);
 Route::get('checkout/{token}', \App\Http\Controllers\CheckOutController::class);
