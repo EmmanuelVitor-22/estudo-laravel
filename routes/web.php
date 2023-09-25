@@ -21,5 +21,5 @@ Route::get('/', function () {
 });
 
 
-Route::resource('users', \App\Http\Controllers\UserController::class);
+Route::resource('users', \App\Http\Controllers\UserController::class)->only('index');
 Route::get('checkout/{token}', \App\Http\Controllers\CheckOutController::class);
