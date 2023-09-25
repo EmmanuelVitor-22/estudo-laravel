@@ -21,8 +21,7 @@ Route::get('/', function () {
 });
 
 
-Route::resources([
-    'users'=> \App\Http\Controllers\UserController::class,
-    'post'=> \App\Http\Controllers\PostController::class,
+Route::resource('users', \App\Http\Controllers\UserController::class)->names([
+    'create' => 'users.criar'
 ]);
 Route::get('checkout/{token}', \App\Http\Controllers\CheckOutController::class);
