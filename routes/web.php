@@ -17,35 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 //ENTENDENDO REQUEST: CHECANDO OS INPUTS
 Route::get('/user', function (Request $request) {
-
-//checagem se tem aquele valor
-
-//    if($request->has('token')){
-//        dd("existe token");
-//    }
-//
-//    if($request->has(['token', 'curso'])){
-////        isso corresponde a :  if($request->has('token') && $request->has(' curso') ){
-//        dd("existe token e curso");
-//    }
-//    $request->whenHas('curso', function ($input) {
-//        dd("Faça algo");
-//    });
-
-//    if ($request->hasAny(['token', 'curso'])) {
-//        dd("Se não ta preenchido ele cai aqui");
-//    }
-//
-//
-//    $request->whenFilled('curso', function ($input) {
-//        dd("O mesmo q fazer validação com empity . É para caso seja vazio");
-//    });
-
-    if ($request->missing('token')) {
-
-        dd("O mesmo q fazer validação isset. É para ver se está setado");
-    }
-
+//return \Illuminate\Support\Facades\View::make('welcome'); //o mesmo q o formato de baixo, mas tem algumas funcionalidades
+return view('welcome');
 });
 
 /**/
