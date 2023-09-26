@@ -15,10 +15,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-//ENTENDENDO REQUEST: CHECANDO OS INPUTS
-Route::get('/user', function (Request $request) {
 
+Route::get('/', function () {
+return view('welcome');
+});
+
+Route::get('/profile', function () {
 return view('user.profile');
 });
 
-/**/
+
