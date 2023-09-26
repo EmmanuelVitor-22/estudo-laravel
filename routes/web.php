@@ -22,6 +22,7 @@ return view('welcome');
 });
 
 Route::get('/profile', function () {
+//    View::exists('user.profile');
 return view('user.profile');
 });
 
