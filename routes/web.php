@@ -17,8 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 //ENTENDENDO REQUEST: CHECANDO OS INPUTS
 Route::get('/user', function (Request $request) {
-//return \Illuminate\Support\Facades\View::make('welcome'); //o mesmo q o formato de baixo, mas tem algumas funcionalidades
-return view('welcome');
+
+return view('user.profile');
 });
 
 /**/
