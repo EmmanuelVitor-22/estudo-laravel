@@ -9,32 +9,11 @@
 </head>
 <body>
 {{count($users)}}
+{{--diretiva php, usada geralmente para casos onde precisamos fazer codigo php dentro do blade--}}
+@php
+$count = count($users);
+@endphp
 
-{{--diretivas if e else fluxo comum--}}
-@if(count($users)===1)
-    <p>Eu tenho um usuario</p>
-@elseif(count($users)>1)
-    <p>Eu tenho mais de um usuario</p>
-@else
-    <p>Eu não tenho usuario</p>
-@endif
-
-
-{{--Diretivas if e else usando negação--}}
-@unless(count($users))
-{{--    equivale a negação do if: @if(!count($users)===1)--}}
-    <p>unless:Eu não tenho usuario</p>
-@endunless
-
-{{--utilizado para checar se existe   --}}
-@isset($user)
-<p>Variavel existe</p>
-@endisset
-
-{{--utilizado para checar se está vazio   --}}
-@empty($user)
-<p>Variavel está vazio</p>
-@endempty
-
+@include()
 </body>
 </html>
