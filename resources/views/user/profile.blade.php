@@ -12,22 +12,14 @@
 
 
 @foreach($users as $user)
-    @if($user->id ===1)
-{{--        vai serguir o fluxo e ignorar o elemento com esse id--}}
-{{--        basicamente é a mesma ideia do switch/case--}}
-        @continue
+    {{--    variavel do blade com todas as informações do loop--}}
+    {{--    @dd($loop)--}}
+
+    @if($loop->odd)
+        {{-- mostra so os itens inpares--}}
+        {{$user->id}}{{$user->name}} <br>
     @endif
-
-    {{$user->name}} <br>
-
-    @if($user->id ===7)
-        {{--        vai parar o fluxo e ignorar ao chegar nesse elemento--}}
-        {{--        basicamente é a mesma ideia do switch/case--}}
-        @break
-    @endif
-
-
-
+    {{--    {{$user->id}}{{$user->name}} <br>--}}
 @endforeach
 
 
