@@ -16,14 +16,10 @@ use Illuminate\Support\Facades\View;
 */
 
 
-
 Route::get('/', function () {
 return view('welcome');
 });
 
-Route::get('/profile', function () {
-//    View::exists('user.profile');
-return view('user.profile');
-});
+Route::get('/profile', [\App\Http\Controllers\UserController::class, 'index']);
 
 

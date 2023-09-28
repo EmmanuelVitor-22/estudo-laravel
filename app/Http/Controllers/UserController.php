@@ -7,14 +7,14 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-      dd("index");
+        $users = User::all();
+//    pasta "user", arquivo "profile"
+      return view('user.profile', [
+          'users' =>  $users,
+      ]);
     }
 
     /**
