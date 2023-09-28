@@ -10,6 +10,7 @@
 <body>
 {{count($users)}}
 
+{{--diretivas if e else fluxo comum--}}
 @if(count($users)===1)
     <p>Eu tenho um usuario</p>
 @elseif(count($users)>1)
@@ -17,6 +18,14 @@
 @else
     <p>Eu não tenho usuario</p>
 @endif
+
+
+{{--Diretivas if e else usando negação--}}
+@unless(count($users))
+{{--    equivale a negação do if: @if(!count($users)===1)--}}
+    <p>unless:Eu não tenho usuario</p>
+@endunless
+
 
 </body>
 </html>

@@ -10,7 +10,7 @@ class UserController extends Controller
 
     public function index()
     {
-        $users = User::all();
+        $users = [];
 //    pasta "user", arquivo "profile"
       return view('user.profile', [
           'users' =>  $users,
