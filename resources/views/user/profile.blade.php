@@ -9,28 +9,27 @@
 </head>
 <body>
 {{count($users)}}<br>
-{{--diretiva for--}}
-{{--@for($i=0; $i<10; $i++)--}}
-{{--    {{$i}}--}}
-{{--@endfor--}}
+
 
 @foreach($users as $user)
+    @if($user->id ===1)
+{{--        vai serguir o fluxo e ignorar o elemento com esse id--}}
+{{--        basicamente é a mesma ideia do switch/case--}}
+        @continue
+    @endif
+
     {{$user->name}} <br>
+
+    @if($user->id ===7)
+        {{--        vai parar o fluxo e ignorar ao chegar nesse elemento--}}
+        {{--        basicamente é a mesma ideia do switch/case--}}
+        @break
+    @endif
+
+
 
 @endforeach
 
-@forelse($users as $user)
-{{--    funcioan exatamente como o foreach--}}
-    {{$user->name}} <br>
-{{--porem tem essa tratativa, caso não mexista registros--}}
-@empty
-    <p>Não há usuario</p>
-@endforelse
-
-
-@while($variavel)
-{{--   logica do while--}}
-@endwhile
 
 </body>
 </html>
