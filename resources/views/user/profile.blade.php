@@ -8,12 +8,29 @@
     <title>Document</title>
 </head>
 <body>
-{{count($users)}}
-{{--diretiva php, usada geralmente para casos onde precisamos fazer codigo php dentro do blade--}}
-@php
-$count = count($users);
-@endphp
+{{count($users)}}<br>
+{{--diretiva for--}}
+{{--@for($i=0; $i<10; $i++)--}}
+{{--    {{$i}}--}}
+{{--@endfor--}}
 
-@include()
+@foreach($users as $user)
+    {{$user->name}} <br>
+
+@endforeach
+
+@forelse($users as $user)
+{{--    funcioan exatamente como o foreach--}}
+    {{$user->name}} <br>
+{{--porem tem essa tratativa, caso não mexista registros--}}
+@empty
+    <p>Não há usuario</p>
+@endforelse
+
+
+@while($variavel)
+{{--   logica do while--}}
+@endwhile
+
 </body>
 </html>
