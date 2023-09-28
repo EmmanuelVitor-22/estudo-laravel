@@ -26,6 +26,15 @@
     <p>unless:Eu não tenho usuario</p>
 @endunless
 
+{{--utilizado para checar se existe   --}}
+@isset($user)
+<p>Variavel existe</p>
+@endisset
+
+{{--utilizado para checar se está vazio   --}}
+@empty($user)
+<p>Variavel está vazio</p>
+@endempty
 
 </body>
 </html>
