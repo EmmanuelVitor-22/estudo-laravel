@@ -12,7 +12,7 @@ class UserController extends Controller
     {
         $users = User::all();
 //    pasta "user", arquivo "profile"
-      return view('user.profile', [
+      return view('user.index', [
           'users' =>  $users,
       ]);
     }
