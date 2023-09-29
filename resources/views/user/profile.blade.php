@@ -10,18 +10,32 @@
 <body>
 {{count($users)}}<br>
 
+@include('user.heading')
 
-@foreach($users as $user)
-    {{--    variavel do blade com todas as informações do loop--}}
-    {{--    @dd($loop)--}}
 
-    @if($loop->odd)
-        {{-- mostra so os itens inpares--}}
-        {{$user->id}}{{$user->name}} <br>
-    @endif
-    {{--    {{$user->id}}{{$user->name}} <br>--}}
-@endforeach
+{{-- @includeIf = inclua se existir
+{{-- @includeIf = inclua se existir
+equivale a:
+@if ('user.heading)
+    @include('user.heading')
+@endif
+--}}
+{{--@includeIf('user.heading')--}}
 
+{{--Inclui quando algo for valido(no caso a condição for true--}}
+{{-- equivale a isso:
+@if ($user->ownsPost($post)
+     @include('posts.edit-controls', ['post' => $post])
+@endif
+--}}
+{{--@includeWhen(true,'user.heading')--}}
+
+{{--Inclui quando na condição algo for falso(no caso a condição for falso--}}
+{{--@includeUnless(false,'user.heading')--}}
+
+
+{{--Inclui o primeiro valido que encontrar--}}
+@includeFirst(['user.teste','user.heading'])
 
 </body>
 </html>
