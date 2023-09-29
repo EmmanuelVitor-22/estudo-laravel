@@ -1,11 +1,14 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\User;
 
+use App\Models\User;
 use Illuminate\View\Component;
 
-class User extends Component
+class UserList extends Component
 {
+
+    public $users;
     /**
      * Create a new component instance.
      *
@@ -13,7 +16,7 @@ class User extends Component
      */
     public function __construct()
     {
-        //
+        $this->users = User::all();
     }
 
     /**
@@ -23,6 +26,6 @@ class User extends Component
      */
     public function render()
     {
-        return view('components.user');
+        return view('components.user.user-list');
     }
 }
