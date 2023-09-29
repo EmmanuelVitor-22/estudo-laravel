@@ -8,34 +8,16 @@
     <title>Document</title>
 </head>
 <body>
-{{count($users)}}<br>
+{{--Em caso onde se queira que , por exemplo, o header ou componente seja para todas as paginas da aplicação--}}
+{{--e se tenha nescessidades, por exemplo de passar dados por ele.--}}
 
-@include('user.heading')
+{{--Por exemplo: cada item do array q é passado vira uma variavel--}}
+{{--ps: então isso funciona também para outros formatos de include--}}
 
+@include('heading', [
+    'title' => 'Usuarios'
+])
 
-{{-- @includeIf = inclua se existir
-{{-- @includeIf = inclua se existir
-equivale a:
-@if ('user.heading)
-    @include('user.heading')
-@endif
---}}
-{{--@includeIf('user.heading')--}}
-
-{{--Inclui quando algo for valido(no caso a condição for true--}}
-{{-- equivale a isso:
-@if ($user->ownsPost($post)
-     @include('posts.edit-controls', ['post' => $post])
-@endif
---}}
-{{--@includeWhen(true,'user.heading')--}}
-
-{{--Inclui quando na condição algo for falso(no caso a condição for falso--}}
-{{--@includeUnless(false,'user.heading')--}}
-
-
-{{--Inclui o primeiro valido que encontrar--}}
-@includeFirst(['user.teste','user.heading'])
 
 </body>
 </html>
