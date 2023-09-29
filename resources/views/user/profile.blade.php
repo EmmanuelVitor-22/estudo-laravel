@@ -15,9 +15,14 @@
 {{--ps: então isso funciona também para outros formatos de include--}}
 
 @include('heading', [
-    'title' => 'Usuarios'
+    'title' =>  'Usuarios'
 ])
 
+@foreach($users as $user)
+    @include('user.user', [
+     'usuario' => $user
+ ])
+@endforeach
 
 </body>
 </html>
