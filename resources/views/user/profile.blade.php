@@ -8,21 +8,23 @@
     <title>Document</title>
 </head>
 <body>
-{{--Em caso onde se queira que , por exemplo, o header ou componente seja para todas as paginas da aplicação--}}
-{{--e se tenha nescessidades, por exemplo de passar dados por ele.--}}
-
-{{--Por exemplo: cada item do array q é passado vira uma variavel--}}
-{{--ps: então isso funciona também para outros formatos de include--}}
-
+{{--ps: qndo se tem uma subview, ela herda do pai as propriedades e variaveis--}}
 @include('heading', [
     'title' =>  'Usuarios'
 ])
 
-@foreach($users as $user)
-    @include('user.user', [
-     'usuario' => $user
- ])
-@endforeach
+{{--@foreach($users as $user)--}}
+{{--    @include('user.user', [--}}
+{{--     'usuario' => $user--}}
+{{-- ])--}}
+{{--@endforeach--}}
 
+{{--Combina loops e inclusões em uma linha.
+O primeiro argumento é a visão parcial a ser renderizada para cada elemento na matriz ou coleção.
+O segundo argumento é a matriz ou coleção sobre a qual você deseja iterar, enquanto
+O terceiro argumento é o nome da variável que será atribuída à iteração atual na exibição.
+--}}
+{{--ps: com essa diretiva não acontece de da filha herdar do pai--}}
+{{--@each('user.user',$users,'user')--}}
 </body>
 </html>
