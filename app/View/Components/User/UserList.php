@@ -12,6 +12,12 @@ class UserList extends Component
     public $users;
     public $type;
     public $cardClass;
+    public $curso = "Laravue";
+
+//    ocultando atributos ou metodos (publicos).
+//    Para ocultar é so passar o atributo ou metodo para essa variavel except, e ele não poderar
+//    ser utilizado no component
+    public $except = ['curso'];
 
     /**
      * Create a new component instance.
