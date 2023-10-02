@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
@@ -20,6 +21,6 @@ Route::get('/', function () {
 return view('welcome');
 });
 
-Route::get('/profile', [\App\Http\Controllers\UserController::class, 'index']);
+Route::get('/profile', [UserController::class, 'index']);
 
 
