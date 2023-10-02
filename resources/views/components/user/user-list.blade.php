@@ -1,4 +1,7 @@
 <div class="container">
+
+
+
     @if($type === 'lista')
         <ul class="list-group">
             @foreach($users as $user)
@@ -9,7 +12,7 @@
         </ul>
     @elseif($type === 'card')
         @foreach($users as $user)
-            <div class="card mb-2 shadow">
+            <div class="card mb-2 shadow bg-{{$cardClass}}" >
                 <div class="card-body">
                     {{$user->name}}
                 </div>

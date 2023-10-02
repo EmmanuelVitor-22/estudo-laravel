@@ -10,10 +10,12 @@
 @section('content')
 
     <x-user.user-list
+        {{-- caso queira usar o camelCase no componente, cria um atributo na classe do componente,
+   mas no componente precisa ser no modo kebab-case--}}
+        card-class="warning"
         :users="$users"
-        {{-- caso estivessemso usando um javascript, num vue.js por exemplo, seria uma sintaxe parecida,--}}
-        {{-- para o blade fazer o escape e não se confundir, usase ::class-card = "{'danger' : isSelected}"--}}
         type="card"
+
     />
 
 @endsection
