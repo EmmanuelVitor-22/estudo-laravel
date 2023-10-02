@@ -9,14 +9,19 @@ class UserList extends Component
 {
 
     public $users;
+    //para definir o tipo de lista que sera renderizado no componente
+    // esse valor sera passado no  componente e sera injetado diretamente no construtor da classe
+    public $type;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($type = 'lista')
+        //defini o valor padrão
     {
         $this->users = User::all();
+        $this->type = $type;
     }
 
     /**
