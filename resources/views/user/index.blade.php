@@ -10,10 +10,9 @@
 @section('content')
 
     <x-user.user-list
-        {{-- Forma de passar os dados de forma dinamica.
-        Permite acesso interno ao que é passado--}}
-        {{-- :significa q esta passando uma variavel--}}
         :users="$users"
+        {{-- caso estivessemso usando um javascript, num vue.js por exemplo, seria uma sintaxe parecida,--}}
+        {{-- para o blade fazer o escape e não se confundir, usase ::class-card = "{'danger' : isSelected}"--}}
         type="card"
     />
 
