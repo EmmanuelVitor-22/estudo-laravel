@@ -9,9 +9,7 @@ use Illuminate\View\Component;
 class UserList extends Component
 {
 
-    public  $users;
-    //para definir o tipo de lista que sera renderizado no componente
-    // esse valor sera passado no  componente e sera injetado diretamente no construtor da classe
+    public $users;
     public $type;
     public $cardClass;
 
@@ -20,13 +18,16 @@ class UserList extends Component
      *
      * @return void
      */
-    public function __construct($users = null, $type = 'lista', $cardClass='success')
-        //defini o valor padrão
+    public function __construct($users = null, $type = 'lista', $cardClass = 'success')
     {
-        // DESTA FORMA DESAMARRA DA MODEL, DANDO MAIS FLEXBILIDADE
         $this->users = $users;
         $this->type = $type;
         $this->cardClass = $cardClass;
+    }
+
+    public function isSelected($userId)
+    {
+        return $userId === 3;
     }
 
     /**

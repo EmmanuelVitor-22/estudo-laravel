@@ -10,8 +10,6 @@
 @section('content')
 
     <x-user.user-list
-        {{-- caso queira usar o camelCase no componente, cria um atributo na classe do componente,
-   mas no componente precisa ser no modo kebab-case--}}
         card-class="warning"
         :users="$users"
         type="card"
