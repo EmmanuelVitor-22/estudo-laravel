@@ -17,7 +17,7 @@
     />
     <x-form.button
         nome="Salvar"
-        variante="success"
+        isRed
         class="mt-2">
     </x-form.button>
 

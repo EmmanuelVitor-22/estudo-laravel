@@ -14,7 +14,7 @@ class button extends Component
     /**
      * @var string
      */
-    public string $variante;
+    public string $isRed;
 
     /**
      * Create a new component instance.
@@ -22,10 +22,10 @@ class button extends Component
      * @return void
      */
     public function __construct(string $nome,
-                                string $variante)
+                                bool $isRed)
     {
         $this->nome = $nome;
-        $this->variante = $variante;
+        $this->isRed = $isRed;
     }
 
 
