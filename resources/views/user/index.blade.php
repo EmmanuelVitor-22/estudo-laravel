@@ -13,8 +13,13 @@
         card-class="warning"
         :users="$users"
         type="card"
-
+        class="bg-danger"
     />
+    <x-form.button
+        nome="Salvar"
+        variante="success"
+        class="mt-2">
+    </x-form.button>
 
 @endsection
 
