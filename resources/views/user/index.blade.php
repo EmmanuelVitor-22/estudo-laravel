@@ -16,6 +16,7 @@
         class="bg-danger"
     />
     <x-form.button
+        type="submit"
         nome="Salvar"
 {{--        aqui ele esta verdadeiro--}}
         isRed
