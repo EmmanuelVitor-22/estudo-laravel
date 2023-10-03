@@ -17,7 +17,9 @@
     />
     <x-form.button
         nome="Salvar"
+{{--        aqui ele esta verdadeiro--}}
         isRed
+{{--        se eu fizer :isRed="false" ele muda a pripriedade--}}
         class="mt-2">
     </x-form.button>
 
