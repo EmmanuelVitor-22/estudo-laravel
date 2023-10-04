@@ -14,17 +14,18 @@
             {{--            {{$erros->all()}} -> todos os erros--}}
             @if($errors->any())
                 @foreach($errors->all() as $error)
-                   <li class="text-danger">
-                       {{$error}}
-                   </li>
+                    <li class="text-danger">
+                        {{$error}}
+                    </li>
                 @endforeach
             @endif
             <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
+                <input type="email" class="form-control   @error('email') is-invalid @enderror " id="floatingInput" placeholder="name@example.com" name="email">
                 <label for="floatingInput">Email address</label>
             </div>
+
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="passwor">
+                <input type="password" class="form-control  @error('password') is-invalid @enderror" id="floatingPassword" placeholder="Password" name="passwor">
                 <label for="floatingPassword">Password</label>
             </div>
 
