@@ -22,7 +22,7 @@ Route::get('/', function () {
 return view('welcome');
 });
 
-Route::get('/login', [AuthController::class,'login'])->name('login.index');
-Route::get('login', [AuthController::class,'store'])->name('login.store');
+Route::get('login', [AuthController::class,'login'])->name('login.index');
+Route::get('store', [AuthController::class,'store'])->name('login.store');
 
 
