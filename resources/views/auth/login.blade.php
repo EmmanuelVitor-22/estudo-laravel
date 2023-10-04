@@ -4,7 +4,7 @@
     <main class="form-signin">
         {{--{{url('/login')}} -> utiliza a rota--}}
         {{--{{route('login.index')}} -> utiliza o nome da rota (vantagem q se a rota mudar não quebra o site)--}}
-        <form method="POST" action="{{$route('login.index')}}">
+        <form method="POST" action="{{route('login.index')}}">
             {{-- Faz uma segurança para o formulario--}}
             @csrf
             <img class="mb-4" src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="72"
