@@ -2,19 +2,21 @@
 
 @section('content')
     <main class="form-signin">
-        <form>
-             {{-- Faz uma segurança para o formulario--}}
+        {{--{{url('/login')}} -> utiliza a rota--}}
+        {{--{{route('login.index')}} -> utiliza o nome da rota (vantagem q se a rota mudar não quebra o site)--}}
+        <form method="POST" action="{{route('login.index')}}">
+            {{-- Faz uma segurança para o formulario--}}
             @csrf
             <img class="mb-4" src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="72"
                  height="57">
             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
             <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
                 <label for="floatingInput">Email address</label>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="passwor">
                 <label for="floatingPassword">Password</label>
             </div>
 
