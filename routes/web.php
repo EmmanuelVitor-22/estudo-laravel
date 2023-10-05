@@ -19,10 +19,11 @@ use Illuminate\Support\Facades\View;
 
 
 Route::get('/', function () {
+    abort(404, "Pagina não encontrada");
 return view('welcome');
 });
 
 Route::get('login', [AuthController::class,'login'])->name('login.index');
-Route::get('store', [AuthController::class,'store'])->name('login.store');
+Route::post('login', [AuthController::class,'store'])->name('login.store');
 
 

@@ -12,27 +12,37 @@
             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
             {{--            {{$erros->any()}} -> se tem ou não erro--}}
             {{--            {{$erros->all()}} -> todos os erros--}}
-            @if($errors->any())
-                @foreach($errors->all() as $error)
-                    <li class="text-danger">
-                        {{$error}}
-                    </li>
-                @endforeach
-            @endif
+            {{--            @if($errors->any())--}}
+            {{--                @foreach($errors->all() as $error)--}}
+            {{--                    <li class="text-danger">--}}
+            {{--                        {{$error}}--}}
+            {{--                    </li>--}}
+            {{--                @endforeach--}}
+            {{--            @endif--}}
             <div class="form-floating">
-                <input type="email" class="form-control   @error('email') is-invalid @enderror " id="floatingInput"
+                <input type="email" class="form-control @error('email') is-invalid @enderror" id="floatingInput"
                        placeholder="name@example.com"
                        name="email"
-                value="{{old('email')}}">
-<!--recuperando valor antido de algo digitado no formulario-->
+                       value="{{old('email')}}">
+                <!--recuperando valor antido de algo digitado no formulario-->
                 <label for="floatingInput">Email address</label>
             </div>
+            @error('email')
+            <div class="text-danger">
+                {{$message}}
+            </div>
+            @enderror
 
             <div class="form-floating">
-                <input type="password" class="form-control  @error('password') is-invalid @enderror" id="floatingPassword" placeholder="Password" name="passwor">
+                <input type="password" class="form-control  @error('password') is-invalid @enderror"
+                       id="floatingPassword" placeholder="Password" name="passwor">
                 <label for="floatingPassword">Password</label>
             </div>
-
+            @error('password')
+            <div class="text-danger">
+                {{$message}}
+            </div>
+            @enderror
             <div class="checkbox mb-3">
                 <label>
                     <input type="checkbox" value="remember-me"> Remember me
